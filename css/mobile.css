@@ -68,3 +68,46 @@ body.reward-visible{overflow:hidden!important; overscroll-behavior:none!importan
 #craft-reward-modal .modal-backdrop{position:absolute!important;inset:0!important;background:rgba(25,9,53,.88)!important;backdrop-filter:blur(7px);}
 #craft-reward-modal .craft-reward-card{position:relative!important;z-index:1!important;flex:0 1 480px;max-width:100%!important;max-height:100%!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
 #craft-reward-modal .craft-reward-ok{position:sticky;bottom:0;z-index:2;touch-action:manipulation;cursor:pointer;}
+
+/* v1.0.4: Allow NORMAL DOCUMENT SCROLLING. Do not lock html/body or
+   create a nested scroller around the game. Android browsers and installed PWAs
+   scroll the document natively; only the bottom tab bar stays fixed. */
+html {
+  height:auto!important;
+  min-height:100%!important;
+  max-height:none!important;
+  overflow-x:clip!important;
+  overflow-y:auto!important;
+  overscroll-behavior-y:auto!important;
+  scroll-behavior:auto;
+  touch-action:auto!important;
+}
+body,body.reward-visible:not(:has(#craft-reward-modal:not([hidden]))) {
+  height:auto!important;
+  min-height:100dvh!important;
+  max-height:none!important;
+  overflow-x:clip!important;
+  overflow-y:visible!important;
+  overscroll-behavior-y:auto!important;
+  touch-action:auto!important;
+}
+#app {
+  height:auto!important;
+  max-height:none!important;
+  min-height:100dvh!important;
+  overflow:visible!important;
+  touch-action:auto!important;
+  padding-bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 45px)!important;
+}
+#app main,#app .page,#page-settings,#page-settings .settings-panel {
+  height:auto!important;max-height:none!important;overflow:visible!important;
+  touch-action:auto!important;
+}
+/* Even a stale reward-visible state must not lock the rest of the app.
+   The modal itself is viewport-fixed and its card can scroll separately. */
+body.reward-visible {overflow-y:auto!important;touch-action:auto!important;}
+#detail-modal .modal-card,#craft-reward-modal .craft-reward-card {
+  overflow-y:auto!important;-webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+}
+#craft-reward-modal:not([hidden]) {position:fixed!important;inset:0!important;z-index:2147483000!important;}

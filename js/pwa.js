@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
  $('install-game')?.addEventListener('click',doInstall);$('install-banner-button')?.addEventListener('click',doInstall);
  $('install-banner-dismiss')?.addEventListener('click',()=>{sessionStorage.setItem('gc-install-dismissed','1');setBanner()});
  $('offline-retry')?.addEventListener('click',requestCache);
- document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'instant'})));
+ document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'auto'})));
  if(installed())localStorage.setItem('gc-app-installed','1');setBanner();installHelp();
  if(!('serviceWorker'in navigator)){setStatus('This browser does not support offline installation.');$('offline-progress').textContent='Unavailable';return}
  try{registration=await navigator.serviceWorker.register('./service-worker.js',{scope:'./'});await navigator.serviceWorker.ready;

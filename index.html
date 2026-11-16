@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#6c3eb1"><title>Gear Crafter Mobile — Craft, Discover, Collect!</title><meta name="description" content="Craft whimsical fantasy treasures, discover rare rainbow loot, and grow your collection. Play Gear Crafter offline!">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Gear Crafter">
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="assets/pwa/apple-touch-icon.png">
-<link rel="icon" href="assets/pwa/icon-192.png" type="image/png"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/mobile.css?v=1.0.2"></head>
+<link rel="icon" href="assets/pwa/icon-192.png" type="image/png"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/mobile.css?v=1.0.4"></head>
 <body>
 <div id="app"><div class="install-banner" id="install-banner" hidden><div><strong>✨ Take the magic anywhere!</strong><small>Install Gear Crafter for offline crafting.</small></div><button id="install-banner-button" class="install-cta">Install</button><button id="install-banner-dismiss" class="install-dismiss" aria-label="Dismiss install suggestion">✕</button></div>
  <div class="sky-decor" aria-hidden="true"><span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span><span class="hill h1"></span><span class="hill h2"></span></div>
@@ -19,7 +19,6 @@
     <div class="workshop" id="workshop"><div class="shelf shelf-one">🧪 ✨ 🧴</div><div class="shelf shelf-two">📜 💎 🕯️</div><div class="ambient-orb orb-one"></div><div class="ambient-orb orb-two"></div><div class="magic-circle"></div><div class="anvil" id="anvil"><div class="anvil-spark">✧</div><div class="anvil-top"></div><div class="anvil-middle">⚙</div><div class="anvil-bottom"></div></div><div class="float-spark s1">✦</div><div class="float-spark s2">✧</div><div class="float-spark s3">✦</div><div class="float-spark s4">✦</div><canvas id="forge-particles" aria-hidden="true"></canvas></div>
     <div class="forge-controls"><button class="forge-button" id="forge-button">⚒️ &nbsp; FORGE ITEM! <span class="button-shine"></span></button><div class="cooldown-heading"><span id="cooldown-label">✨ Ready to create something wonderful!</span><span id="cooldown-time">READY</span></div><div class="cooldown-track"><canvas id="cooldown-canvas" aria-label="Crafting cooldown progress"></canvas><span id="cooldown-percent" class="cooldown-percent"></span></div><div class="forge-hint" id="forge-hint">Each creation could be your next Rainbow treasure!</div></div>
    </section>
-   <section class="panel reveal-panel" aria-hidden="true" id="reveal-panel"><div class="reveal-heading">✦ &nbsp; YOUR LATEST CREATION &nbsp; ✦</div><div id="item-reveal" class="item-reveal"><div class="placeholder-gem">🎁</div><h2>A surprise awaits!</h2><p>Press Forge Item to discover your first magical treasure.</p></div><div class="reveal-actions"><button class="secondary-button" id="view-collection">🎒 Collection</button><button class="secondary-button accent" id="reveal-forge-again">⚒️ Forge Again</button></div></section>
   </div>
   <div class="bottom-layout"><section class="panel mini-stats"><div class="panel-heading">⭐ Your Crafting Journey</div><div class="mini-stat"><span>⚒️ Total forged</span><b id="mini-total">0</b></div><div class="mini-stat"><span>💫 Unique discoveries</span><b id="mini-unique">0</b></div><div class="mini-stat"><span>🌈 Rainbow treasures</span><b id="mini-rainbow">0</b></div></section><section class="panel recent-panel"><div class="panel-heading">🕒 Recent Creations <button class="text-button" id="recent-view-all">View All ❯</button></div><div id="recent-items" class="recent-items"><span class="empty-line">Your newest treasures will appear here!</span></div></section></div>
  </section>
@@ -42,5 +41,5 @@
   </div>
  </div>
  <script defer src="js/pwa.js"></script><script src="js/data.js"></script><script src="js/audio.js"></script><script src="js/visual-data.js"></script><script src="js/extra-items.js"></script>
-<script src="js/engine.js"></script><script src="js/app.js?v=1.0.2"></script><script src="js/icon-assets.js"></script>
+<script src="js/engine.js"></script><script src="js/app.js?v=1.0.4"></script><script src="js/icon-assets.js"></script>
 </body></html>
