@@ -1,5 +1,5 @@
 /* Gear Crafter Mobile — versioned offline cache, strictly scoped to this PWA. */
-const VERSION='gc-mobile-1.0.0';
+const VERSION='gc-mobile-1.0.1';
 const CORE_CACHE=VERSION+'-core', ART_CACHE=VERSION+'-art';
 const CORE=['./','index.html','manifest.webmanifest','assets-manifest.json','css/style.css','css/mobile.css','js/data.js','js/audio.js','js/visual-data.js','js/extra-items.js','js/engine.js','js/app.js','js/icon-assets.js','js/pwa.js','assets/pwa/icon-192.png','assets/pwa/icon-512.png','assets/pwa/maskable-512.png'];
 self.addEventListener('install',event=>{event.waitUntil((async()=>{const cache=await caches.open(CORE_CACHE);await cache.addAll(CORE);await self.skipWaiting()})())});
