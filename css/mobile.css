@@ -59,3 +59,12 @@ body.reward-visible{overflow:hidden!important;touch-action:none}
 @keyframes mobileRewardPop{from{opacity:.2;transform:translateY(25px) scale(.85)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-height:650px){.craft-reward-card{padding:13px 12px}.craft-reward-content .reveal-icon{height:105px!important;width:105px!important;margin:5px auto!important}.craft-reward-ok{height:50px}.craft-reward-status{margin:6px 0 12px}}
 @media(prefers-reduced-motion:reduce){.craft-reward-card{animation:none}}
+
+/* v1.0.2: reward is the ONLY item display in the mobile forge. */
+#page-forge .reveal-panel {display:none!important;}
+body.reward-visible{overflow:hidden!important; overscroll-behavior:none!important;}
+#craft-reward-modal[hidden]{display:none!important;}
+#craft-reward-modal:not([hidden]){position:fixed!important;inset:0!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:2147483000!important;padding:calc(16px + env(safe-area-inset-top)) 12px calc(16px + env(safe-area-inset-bottom))!important;overflow:hidden!important;isolation:isolate;}
+#craft-reward-modal .modal-backdrop{position:absolute!important;inset:0!important;background:rgba(25,9,53,.88)!important;backdrop-filter:blur(7px);}
+#craft-reward-modal .craft-reward-card{position:relative!important;z-index:1!important;flex:0 1 480px;max-width:100%!important;max-height:100%!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
+#craft-reward-modal .craft-reward-ok{position:sticky;bottom:0;z-index:2;touch-action:manipulation;cursor:pointer;}

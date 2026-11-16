@@ -25,7 +25,7 @@
   const count=collected.count||1;
   $('craft-reward-heading').textContent=isNew?'✦ NEW DISCOVERY! ✦':'✦ ITEM CRAFTED! ✦';
   $('craft-reward-content').innerHTML=`${itemSlot(collected,'reveal-icon')}<h2 class="item-title ${collected.rarity==='Rainbow'?'rainbow-text':''}" style="color:${r.color}">${itemName(collected)}</h2><div class="rarity-tag" style="${colorStyle(collected)}">${r.icon} ${r.name.toUpperCase()} ${r.icon}</div><p class="craft-reward-kind">${escapeHTML(collected.category)} · ${collected.pre&&collected.suf?'Prefix + Suffix':collected.pre?'Prefix':collected.suf?'Suffix':'No affixes'}</p><p class="craft-reward-status">${isNew?'🌟 Added to your collection!':`Duplicate · Total copies: ${number(count)}`}</p>`;
-  const modal=$('craft-reward-modal');modal.hidden=false;
+  const modal=$('craft-reward-modal');modal.hidden=false;modal.removeAttribute('hidden');
   modal.style.setProperty('--reward-color',r.color);
   document.body.classList.add('reward-visible');
   $('craft-reward-ok').focus({preventScroll:true});
